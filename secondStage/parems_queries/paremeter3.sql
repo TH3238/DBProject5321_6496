@@ -1,11 +1,8 @@
-SELECT 
-    PR.Product_Id, 
-    PR.Product_Name, 
-    PR.Product_Price, 
-    C.Category_Name 
+SELECT
+  C.client_id,
+  C.client_name,
+  C.is_club_member
 FROM 
-    Products PR
-JOIN 
-    Categorys C ON PR.Category_Id = C.Category_Id
+  client C
 WHERE 
-    C.Category_Name IN ('&category1', '&category2', '&category3');
+  C.Client_Id=&<name="clientID" hint="client id value between 0-999">;
