@@ -38,12 +38,14 @@ CREATE TABLE Orders
 );
 
 CREATE TABLE Purchase
-();
+(
 
   Purchase_Id NUMERIC(3) NOT NULL,
   Purchase_Date DATE NOT NULL,
   Dellivery_Date DATE NOT NULL,
   PRIMARY KEY (Purchase_Id)
+ 
+);
 
 CREATE TABLE Order_Supplier
 (
