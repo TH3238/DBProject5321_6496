@@ -9,4 +9,4 @@ JOIN
 JOIN 
     Client C ON PC.Client_Id = C.Client_Id
 WHERE 
-    C.Client_Name = '&client-name';
+    C.Client_Name = '&client_name';

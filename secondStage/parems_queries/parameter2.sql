@@ -5,4 +5,5 @@ SELECT
 FROM 
     Worker W
 WHERE 
-    W.Start_of_Work_date >= TO_DATE('&start_date', 'dd/mm/yyyy');
+    W.Start_of_Work_date >= TO_DATE('&start_date', 'dd/mm/yyyy')
+    AND W.Start_of_Work_date <= TO_DATE('&end_date', 'dd/mm/yyyy');
