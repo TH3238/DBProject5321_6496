@@ -1,4 +1,4 @@
-CREATE VIEW ClientAtivityworker AS
+CREATE VIEW ClientActivityworker AS
 SELECT 
   c.ClientId,
   c.ClientName,
@@ -11,34 +11,28 @@ SELECT
   w.WorkerName,
   w.WorkerRole
 FROM 
-  Client_bank c
+  Client c
 JOIN 
   activity ac ON c.ClientId = ac.ClientId
 JOIN 
   Actions a ON ac.ActionId = a.ActionId
 JOIN 
-  Worker_bank w ON ac.WorkerId = w.WorkerId
+  Worker w ON ac.WorkerId = w.WorkerId
 
 UNION ALL
 
 SELECT 
-  c.ClientId,
-  c.ClientName,
-  c.ClientLastName,
-  a.ActionId,
-  a.ActionName,
-  a.ActionSum,
-  a.ActionDate,
-  NULL AS WorkerId,
-  NULL AS WorkerName,
-  NULL AS WorkerRole
+  NULL AS ClientId,
+  NULL AS ClientName,
+  NULL AS ClientLastName,
+  NULL AS ActionId,
+  NULL AS ActionName,
+  NULL AS ActionSum,
+  NULL AS ActionDate,
+  w.WorkerId,
+  w.WorkerName,
+  w.WorkerRole
 FROM 
-  Client_bank c
-JOIN 
-  activity ac ON c.ClientId = ac.ClientId
-JOIN 
-  Actions a ON ac.ActionId = a.ActionId
-LEFT JOIN 
-  Worker_bank w ON ac.WorkerId = w.WorkerId
+  Worker w
 WHERE 
-  w.WorkerId IS NULL;
+  w.WorkerId NOT IN (SELECT DISTINCT WorkerId FROM activity);
