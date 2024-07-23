@@ -11,7 +11,7 @@ SELECT
   NULL AS Order_Id,
   NULL AS Order_Date
 FROM 
-  Client c
+  Client_s c
 JOIN 
   Purchase_Client pc ON c.Client_Id = pc.Client_Id
 JOIN 
@@ -31,7 +31,7 @@ SELECT
   o.Order_Id,
   o.Order_Date
 FROM 
-  Worker w
+  Worker_s w
 JOIN 
   Order_Worker ow ON w.Worker_Id = ow.Worker_Id
 JOIN 
