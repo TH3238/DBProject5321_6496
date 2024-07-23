@@ -1,3 +1,5 @@
+-- למעשה זהו קובץ מיותר
+
 INSERT INTO Client (Client_Id, Client_Name, Is_Club_Member)
 VALUES (876, 'michal Doe', 1);
 
