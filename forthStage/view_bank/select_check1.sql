@@ -1,0 +1,13 @@
+SELECT 
+  ClientId,
+  ClientName,
+  ClientLastName,
+  ActionId,
+  ActionName,
+  ActionSum,
+  ActionDate,
+  WorkerId,
+  WorkerName,
+  WorkerRole
+FROM 
+  ClientAtivityworker;
