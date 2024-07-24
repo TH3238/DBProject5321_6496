@@ -1,4 +1,6 @@
 CREATE VIEW ClientActivityworker AS
+
+--Information about customers, actions and employees who performed actions.
 SELECT 
   c.ClientId,
   c.ClientName,
@@ -17,10 +19,11 @@ JOIN
 JOIN 
   Actions a ON ac.ActionId = a.ActionId
 JOIN 
-  Worker w ON ac.WorkerId = w.WorkerId
+  Worker w ON ac.WorkerId = w.WorkerId;
 
 UNION ALL
 
+--Information about employees who did not perform actions.
 SELECT 
   NULL AS ClientId,
   NULL AS ClientName,
