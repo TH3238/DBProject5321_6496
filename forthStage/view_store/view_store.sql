@@ -1,4 +1,6 @@
 CREATE VIEW ClientPurchaseWorkerOrder AS
+
+-- Customer details and their purchases (including purchase and delivery dates)
 SELECT 
   c.Client_Id,
   c.Client_Name,
@@ -19,6 +21,7 @@ JOIN
 
 UNION ALL
 
+--Details of employees and the orders they handled (including order dates)
 SELECT 
   NULL AS Client_Id,
   NULL AS Client_Name,
